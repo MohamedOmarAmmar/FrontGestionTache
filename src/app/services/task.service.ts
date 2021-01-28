@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TaskService {
 
-  URL = 'http://localhost:8080/task';
+  URL = 'https://gestion-taches-spring.herokuapp.com/task';
   constructor(private http: HttpClient) { }
   getAllTasks(): Observable<Task>{
     return this.http.get<Task>(this.URL);
