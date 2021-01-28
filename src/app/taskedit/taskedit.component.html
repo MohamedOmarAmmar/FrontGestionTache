@@ -1,0 +1,27 @@
+<form [formGroup]="frm" (ngSubmit)="updateTask($event)">
+
+<div class="modal-header">
+    <h1>Modifer Tâche</h1>
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+<div class="modal-body">
+	<!-- <div class="card lesson-border">
+		<div class="card-body">
+
+			<h5 class="card-title"><b>Title: </b>{{task.title}}</h5>
+			<p class="card-text"><b>Description: </b>{{task.description}}</p>
+		</div>
+    </div> -->
+       
+        <label>Description : </label><br>
+        <textarea formControlName="body" class="form-control" rows="10"></textarea><br><br>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-outline-dark" (click)="passBack()">Modifier</button>
+</div>
+
+
+
+</form>
