@@ -1,11 +1,12 @@
 const express = require('express');
+const path = require('path');
 
-const app = express();
+const ngApp = express();
 
-app.use(express.static('./dist/FrontGestionTache'));
+ngApp.use(express.static('./dist/FrontGestionTache'));
 
-app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/FrontGestionTache/'}),
-);
+ngApp.get('/*', function (request, response) {
+    response.sendFile(path.join(__dirname, '/dist/FrontGestionTache/index.html'));
+});
 
-app.listen(process.env.PORT || 8080);
+ngApp.listen(process.env.PORT || 8080);
