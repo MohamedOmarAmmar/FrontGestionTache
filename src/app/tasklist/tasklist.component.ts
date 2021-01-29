@@ -41,7 +41,8 @@ export class TasklistComponent implements OnInit {
     modalRef.result.then((result) => {
       if (result) {
         console.log(result);
-        this.getAllTasks();
+        
+        setInterval(()=>{this.getAllTasks();}, 250);
       }
     });
   }
